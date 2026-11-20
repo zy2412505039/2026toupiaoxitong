@@ -1,0 +1,104 @@
+/* 工作台首页样式文件 */
+.gongzuotaishouye {
+  width: 100%;
+}
+/* 顶部标题与说明文字 */
+.biaotiquyu {
+  margin-bottom: 20px;
+}
+.biaotiquyu h2 {
+  margin: 0;
+}
+.biaotiquyu .fubiaoti {
+  color: #8c8c8c;
+  font-size: 13px;
+}
+/* 顶部统计卡片区域（纯净静态呈现，无 hover 悬浮） */
+.tongjikaquyu {
+  margin-bottom: 20px;
+}
+.tongjikaquyu .ant-card {
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #f0f0f0;
+}
+/* 各卡片顶部彩色标识条 */
+.tongjikaxiangmu {
+  border-top: 3px solid #1677ff;
+}
+.tongjikarenwu {
+  border-top: 3px solid #722ed1;
+}
+.tongjikawancheng {
+  border-top: 3px solid #52c41a;
+}
+.tongjikajindu {
+  border-top: 3px solid #fa8c16;
+}
+/* 左侧项目推进看板区域 */
+.jindukanbanquyu {
+  margin-bottom: 16px;
+}
+.xiangmuliebiao {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.xiangmutiaomu {
+  padding: 16px;
+  background: #fafafa;
+  border-radius: 6px;
+  border: 1px solid #f0f0f0;
+}
+.xiangmutoubu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.xiangmumingcheng {
+  font-weight: bold;
+  font-size: 15px;
+  margin-right: 8px;
+}
+.xiangmutongji {
+  font-size: 13px;
+  color: #8c8c8c;
+}
+.xiangmutongji .fengefu {
+  margin: 0 8px;
+}
+.xiangmutongji .wanchengzishu {
+  color: #52c41a;
+}
+.xiangmutongji .jinduzishu {
+  color: #1677ff;
+}
+.daituijintishi {
+  font-size: 13px;
+  color: #8c8c8c;
+}
+.daituijinshuzi {
+  color: #faad14;
+}
+/* 右侧快捷工作通道与提示卡片 */
+.kuaijiequyu {
+  width: 100%;
+}
+.tishikinpian {
+  background: #f6ffed !important;
+  border: 1px solid #b7eb8f !important;
+}
+.tishibiaoti {
+  color: #389e0d;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+.tishineirong {
+  color: #52c41a;
+  font-size: 13px;
+  margin: 0;
+  line-height: 22px;
+}
