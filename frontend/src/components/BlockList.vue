@@ -35,7 +35,7 @@
             <button @click="fetchBlocks" class="refresh-btn">刷新区块链</button>
             <div class="auto-refresh">
                 <label for="auto-refresh">
-                    <input type="checkbox" v-model="autoRefresh">自动刷新
+                    <input type="checkbox" v-model="autoRefresh">shuaxin
                 </label>
             </div>
         </div>
@@ -101,7 +101,7 @@ const scanPort = async (port) => {
             online: true,
         }
     } catch (error) {
-        return null;
+        console.error('扫描端口失败:', error);
     }
 }
 // 发现网络中的节点
@@ -110,7 +110,7 @@ const discoverNodes = async () => {
     const portRange = [3001, 3002];
     const promises = portRange.map(port => scanPort(port));
     const results = await Promise.all(promises);
-    availableNodes.value = results.filter(node => node != null);
+    availableNodes.value = results.filter(node => node !== null);
     isDiscovering.value = false;
 
     console.log('可发现的节点:', availableNodes.value);
@@ -138,8 +138,7 @@ const getCurrentNodeP2pPort = () => {
     return currentNode?.p2pPort || null;
 }
 const formateTime = (timestamp) => {
-    // 后端返回毫秒(Date.now())，dayjs 直接接收毫秒
-    return dayjs(timestamp).format('YYYY-MM-DD HH:mm:ss');
+    return dayjs(timestamp * 1000).format('YYYY-MM-DD HH:mm:ss');
 }
 const startPolling = () => {
     if (timer) clearInterval(timer);

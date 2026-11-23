@@ -40,7 +40,7 @@ class PeerToPeer {
         })
 
         socket.on('error', (err) => {
-            console.log(`Error connecting to peer ${host}:${port}`, err.message);
+            console.log(`[P2P] Error connecting to peer ${host}:${port} — ${err.message}`);
         })
     }
     // 关闭所有连接

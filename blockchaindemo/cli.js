@@ -169,8 +169,14 @@ function initHttpServer(port) {
   });
 
   app.post("/addPeer", (req, res) => {
-    p2p.connectToPeer(req.body.peer);
-    res.send();
+    try {
+      const peerStr = req.body.peer;
+      const [host, port] = peerStr.split(":");
+      p2p.connectToPeer(host, parseInt(port, 10));
+      res.send({ ok: true, msg: `正在连接 ${host}:${port}` });
+    } catch (e) {
+      res.status(400).send({ ok: false, msg: e.message });
+    }
   });
 
   app.listen(port, () => {
